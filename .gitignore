@@ -1,2 +1,7 @@
 ﻿.idea
 .vscode
+
+# Ignore everything in Packages by default
+Packages/*
+# But keep our VPM package
+!Packages/com.mxsn.priv

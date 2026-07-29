@@ -1,0 +1,249 @@
+#T#PoiTriplanarProjectionProperties
+//ifex _TriplanarProjection==0
+[HideInInspector] m_start_triplanarprojection (" Triplanar Projection--{reference_property:_TriplanarProjection}", Float) = 0
+[HideInInspector][ThryToggle(TRIPLANAR_PROJECTION)]_TriplanarProjection ("Enable", Float) = 0
+
+[Enum(Depth Projection, 1, Self, 2)]_TriplanarType ("Type--{on_value_actions:[
+    {value:1,actions:[{type:SET_PROPERTY,data:_Cull=1},{type:SET_PROPERTY,data:render_queue=3000},{type:SET_PROPERTY,data:_AlphaForceOpaque=0}, {type:SET_PROPERTY,data:render_type=Transparent},       {type:SET_PROPERTY,data:_BlendOp=0}, {type:SET_PROPERTY,data:_BlendOpAlpha=4}, {type:SET_PROPERTY,data:_Cutoff=0},  {type:SET_PROPERTY,data:_SrcBlend=1}, {type:SET_PROPERTY,data:_DstBlend=10}, {type:SET_PROPERTY,data:_SrcBlendAlpha=1}, {type:SET_PROPERTY,data:_DstBlendAlpha=1},  {type:SET_PROPERTY,data:_AddSrcBlend=1}, {type:SET_PROPERTY,data:_AddDstBlend=1}, {type:SET_PROPERTY,data:_AddSrcBlendAlpha=0}, {type:SET_PROPERTY,data:_AddDstBlendAlpha=1}, {type:SET_PROPERTY,data:_AlphaToCoverage=0},  {type:SET_PROPERTY,data:_ZWrite=0}, {type:SET_PROPERTY,data:_ZTest=0},   {type:SET_PROPERTY,data:_AlphaPremultiply=1}, {type:SET_PROPERTY,data:_OutlineSrcBlend=1}, {type:SET_PROPERTY,data:_OutlineDstBlend=10}, {type:SET_PROPERTY,data:_OutlineSrcBlendAlpha=1}, {type:SET_PROPERTY,data:_OutlineDstBlendAlpha=1}, {type:SET_PROPERTY,data:_OutlineBlendOp=0}, {type:SET_PROPERTY,data:_OutlineBlendOpAlpha=4}]},
+    {value:2,actions:[{type:SET_PROPERTY,data:_Cull=2},{type:SET_PROPERTY,data:render_queue=2000},{type:SET_PROPERTY,data:_AlphaForceOpaque=1}, {type:SET_PROPERTY,data:render_type=Opaque},            {type:SET_PROPERTY,data:_BlendOp=0}, {type:SET_PROPERTY,data:_BlendOpAlpha=4}, {type:SET_PROPERTY,data:_Cutoff=0},  {type:SET_PROPERTY,data:_SrcBlend=1}, {type:SET_PROPERTY,data:_DstBlend=0},  {type:SET_PROPERTY,data:_SrcBlendAlpha=1}, {type:SET_PROPERTY,data:_DstBlendAlpha=1},  {type:SET_PROPERTY,data:_AddSrcBlend=1}, {type:SET_PROPERTY,data:_AddDstBlend=1}, {type:SET_PROPERTY,data:_AddSrcBlendAlpha=0}, {type:SET_PROPERTY,data:_AddDstBlendAlpha=1}, {type:SET_PROPERTY,data:_AlphaToCoverage=0},  {type:SET_PROPERTY,data:_ZWrite=1}, {type:SET_PROPERTY,data:_ZTest=4},   {type:SET_PROPERTY,data:_AlphaPremultiply=0}, {type:SET_PROPERTY,data:_OutlineSrcBlend=1}, {type:SET_PROPERTY,data:_OutlineDstBlend=0},  {type:SET_PROPERTY,data:_OutlineSrcBlendAlpha=1}, {type:SET_PROPERTY,data:_OutlineDstBlendAlpha=0}, {type:SET_PROPERTY,data:_OutlineBlendOp=0}, {type:SET_PROPERTY,data:_OutlineBlendOpAlpha=4}]}
+]}", Int) = 1
+[Enum(Normal Blend, 3, GPU Gems 3, 1, Asymmetric Triplanar, 2)]_TriplanarBlendType ("Blend Method", Int) = 3
+_TriplanarBlendSharpeness ("Blend Sharpness--{condition_showS:(_TriplanarBlendType==3)}", Range(0, 0.55)) = 0.2
+
+_TriplanarTexture ("Triplanar Texture--{reference_properties:[_TriplanarTexturePan, _TriplanarTextureUV]}", 2D) = "white" { }
+[ThryHideInInspector][Vector2]_TriplanarTexturePan ("Panning", Vector) = (0, 0, 0, 0)
+[ThryHideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7, Matcap, 9)]_TriplanarTextureUV ("UV", Int) = 0
+
+[Normal]_TriplanarNormal ("Triplanar Normal--{reference_properties:[_TriplanarNormalScale, _TriplanarNormalPan, _TriplanarNormalStochastic]}", 2D) = "bump" { }
+[ThryHideInInspector]_TriplanarNormalScale ("Intensity", Range(0, 10)) = 1
+[ThryHideInInspector][Vector2]_TriplanarNormalPan ("Panning", Vector) = (0, 0, 0, 0)
+[ThryHideInInspector][ToggleUI]_TriplanarNormalStochastic ("Stochastic Sampling", Float) = 0
+
+_TriplanarMask ("Triplanar Mask--{reference_properties:[_TriplanarMaskPan, _TriplanarMaskUV, _TriplanarMaskInvert]}", 2D) = "white" { }
+[ThryHideInInspector][Vector2]_TriplanarMaskPan ("Panning", Vector) = (0, 0, 0, 0)
+[ThryHideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7, Matcap, 9)]_TriplanarMaskUV ("UV", Int) = 0
+[ThryHideInInspector][ToggleUI]_TriplanarMaskInvert ("Invert", Float) = 0
+
+_TriplanarMaxSize ("Max Size", Float) = 1.0
+_TriplanarEdgeWidth ("Edge Width", Float) = 0.0
+_TriplanarEdgeFade ("Edge Fade", Float) = 1.0
+
+[HideInInspector] m_end_triplanarprojection ("Triplanar Projection", Float) = 0
+//endex
+
+#T#PoiTriplanarProjectionKeywords
+//ifex _TriplanarProjection==0
+#pragma shader_feature_local TRIPLANAR_PROJECTION
+//endex
+
+#T#PoiTriplanarProjectionVariablesExposed
+//ifex _TriplanarProjection==0
+#ifdef TRIPLANAR_PROJECTION
+    float _TriplanarType;
+    float _TriplanarBlendSharpeness;
+    float _TriplanarBlendType;
+    float2 _TriplanarTexturePan;
+    float _TriplanarNormalScale;
+    float2 _TriplanarNormalPan;
+    float _TriplanarNormalStochastic;
+    float2 _TriplanarMaskPan;
+    float _TriplanarMaskUV;
+    float _TriplanarMaskInvert;
+    float _TriplanarMaxSize;
+    float _TriplanarEdgeFade;
+    float _TriplanarEdgeWidth;
+#endif
+//endex
+
+#T#PoiTriplanarProjectionVariables
+//ifex _TriplanarProjection==0
+#ifdef TRIPLANAR_PROJECTION
+    #if defined(PROP_TRIPLANARTEXTURE) || !defined(OPTIMIZER_ENABLED)
+        Texture2D _TriplanarTexture;
+        float4 _TriplanarTexture_ST;
+    #endif
+    #if defined(PROP_TRIPLANARNORMAL) || !defined(OPTIMIZER_ENABLED)
+        Texture2D _TriplanarNormal;
+        float4 _TriplanarNormal_ST;
+    #endif
+    #if defined(PROP_TRIPLANARMASK) || !defined(OPTIMIZER_ENABLED)
+        Texture2D _TriplanarMask;
+        float4 _TriplanarMask_ST;
+    #endif
+#endif
+//endex
+
+#T#PoiTriplanarProjectionFunctions
+//ifex _TriplanarProjection==0
+#ifdef TRIPLANAR_PROJECTION
+void applyTriplanarProjection(inout PoiFragData poiFragData, inout PoiMesh poiMesh, in PoiCam poiCam)
+{
+    if (_TriplanarType == 1 && !DepthTextureExists()) return;
+
+    float3 objWorldPos = unity_ObjectToWorld._m03_m13_m23;
+    float3 objScale = float3(
+        length(unity_ObjectToWorld._m00_m10_m20),
+        length(unity_ObjectToWorld._m01_m11_m21),
+        length(unity_ObjectToWorld._m02_m12_m22)
+    );
+
+    float3 posOS;
+    float3 normalWS;
+    float fade = 1.0;
+    switch ((int)_TriplanarType)
+    {
+        default:
+        case 1:
+        {
+            float rawDepth = SampleScreenDepth(poiCam.screenUV);
+            float sceneEyeDepth = LinearEyeDepth(rawDepth);
+            float3 worldRay = poiMesh.worldPos - getCameraPosition();
+            float fragEyeDepth = -UnityObjectToViewPos(poiMesh.localPos).z;
+            float3 sceneWorldPos = getCameraPosition() + worldRay * (sceneEyeDepth / fragEyeDepth);
+            posOS = (sceneWorldPos - objWorldPos) / objScale;
+            fade = fragEyeDepth - sceneEyeDepth;
+            clip(fade);
+            clip(_TriplanarMaxSize - length(posOS));
+            normalWS = -normalize(cross(ddx(sceneWorldPos), ddy(sceneWorldPos)));
+            break;
+        }
+        case 2:
+        {
+            float3 sceneWorldPos = poiMesh.worldPos;
+            posOS = (sceneWorldPos - objWorldPos) / objScale;
+            normalWS = poiMesh.normals[1];
+            break;
+        }
+    }
+
+    float mask = 1;
+    #if defined(PROP_TRIPLANARMASK) || !defined(OPTIMIZER_ENABLED)
+        mask = POI2D_SAMPLER_PAN(_TriplanarMask, _MainTex, poiUV(poiMesh.uv[_TriplanarMaskUV], _TriplanarMask_ST), _TriplanarMaskPan).r;
+        mask = (_TriplanarMaskInvert > 0.5) ? 1 - mask : mask;
+    #endif
+
+    float3 triblend;
+    switch ((int)_TriplanarBlendType)
+    {
+        default:
+        case 3: // Normal blend
+        {
+            triblend = abs(normalWS);
+            triblend = max(triblend - _TriplanarBlendSharpeness, 0);
+            triblend /= dot(triblend, float3(1,1,1));
+            break;
+        }
+        case 1: // GPU Gems 3
+        {
+            triblend = saturate(pow(normalWS, 6));
+            triblend /= max(dot(triblend, 1..xxx), 0.0001);
+            break;
+        }
+        case 2: // Asymmetric
+        {
+            triblend = 0;
+            // Blend for sides only
+            float2 xzBlend = abs(normalize(normalWS.xz));
+            triblend.xz = max(0, xzBlend - 0.67);
+            triblend.xz /= max(0.00001, dot(triblend.xz, float2(1,1)));
+            // Blend for top
+            triblend.y = saturate((abs(normalWS.y) - 0.675) * 80.0);
+            triblend.xz *= (1 - triblend.y);
+            break;
+        }
+    }
+
+    #if defined(PROP_TRIPLANARTEXTURE) || !defined(OPTIMIZER_ENABLED)
+        float2 uvX = poiUV((posOS.zy + 0.5), _TriplanarTexture_ST);
+        float2 uvY = poiUV((posOS.xz + 0.5), _TriplanarTexture_ST);
+        float2 uvZ = poiUV((posOS.xy + 0.5), _TriplanarTexture_ST);
+    #else
+        float2 uvX = (posOS.zy + 0.5);
+        float2 uvY = (posOS.xz + 0.5);
+        float2 uvZ = (posOS.xy + 0.5);
+    #endif
+
+    #if defined(PROP_TRIPLANARNORMAL) || !defined(OPTIMIZER_ENABLED)
+        float2 uvNX = poiUV((posOS.zy + 0.5), _TriplanarNormal_ST);
+        float2 uvNY = poiUV((posOS.xz + 0.5), _TriplanarNormal_ST);
+        float2 uvNZ = poiUV((posOS.xy + 0.5), _TriplanarNormal_ST);
+    #else
+        float2 uvNX = (posOS.zy + 0.5);
+        float2 uvNY = (posOS.xz + 0.5);
+        float2 uvNZ = (posOS.xy + 0.5);
+    #endif
+    
+    float3 axisSign = normalWS < 0 ? -1 : 1;
+    
+    uvX.x *= axisSign.x;
+    uvY.x *= axisSign.y;
+    uvZ.x *= -axisSign.z;
+
+    float4 colX = float4(0, 0, 0, 0);
+    float4 colY = float4(0, 0, 0, 0);
+    float4 colZ = float4(0, 0, 0, 0);
+    #if defined(PROP_TRIPLANARTEXTURE) || !defined(OPTIMIZER_ENABLED)
+        colX = POI2D_SAMPLER_PAN(_TriplanarTexture, _MainTex, uvX, _TriplanarTexturePan);
+        colY = POI2D_SAMPLER_PAN(_TriplanarTexture, _MainTex, uvY, _TriplanarTexturePan);
+        colZ = POI2D_SAMPLER_PAN(_TriplanarTexture, _MainTex, uvZ, _TriplanarTexturePan);
+    #endif
+
+    float4 col = colX * triblend.x + colY * triblend.y + colZ * triblend.z;
+
+    float3 tnormalX = float3(0, 0, 1);
+    float3 tnormalY = float3(0, 0, 1);
+    float3 tnormalZ = float3(0, 0, 1);
+    #if defined(PROP_TRIPLANARNORMAL) || !defined(OPTIMIZER_ENABLED)
+        tnormalX = PoiUnpackNormalScale(POI2D_SAMPLER_PAN_STOCHASTIC(_TriplanarNormal, _MainTex, uvNX, _TriplanarNormalPan, _TriplanarNormalStochastic), _TriplanarNormalScale);
+        tnormalY = PoiUnpackNormalScale(POI2D_SAMPLER_PAN_STOCHASTIC(_TriplanarNormal, _MainTex, uvNY, _TriplanarNormalPan, _TriplanarNormalStochastic), _TriplanarNormalScale);
+        tnormalZ = PoiUnpackNormalScale(POI2D_SAMPLER_PAN_STOCHASTIC(_TriplanarNormal, _MainTex, uvNZ, _TriplanarNormalPan, _TriplanarNormalStochastic), _TriplanarNormalScale);
+    #endif
+
+    tnormalX.x *= axisSign.x;
+    tnormalY.x *= axisSign.y;
+    tnormalZ.x *= -axisSign.z;
+
+    float3 normalX = float3(0.0, tnormalX.yx);
+    float3 normalY = float3(tnormalY.x, 0.0, tnormalY.y);
+    float3 normalZ = float3(tnormalZ.xy, 0.0);
+
+    normalWS = normalize(
+        normalX.xyz * triblend.x +
+        normalY.xyz * triblend.y +
+        normalZ.xyz * triblend.z +
+        normalWS
+        );
+
+    fade = smoothstep(0.0 + _TriplanarEdgeWidth, _TriplanarEdgeFade + _TriplanarEdgeWidth, fade);
+    col.a *= fade;
+
+    if (_TriplanarType == 1)
+    {
+        poiMesh.localPos = posOS;
+        poiMesh.worldPos = mul(unity_ObjectToWorld, float4(posOS, 1)).xyz;
+    }
+    
+    poiFragData.baseColor = lerp(poiFragData.baseColor, col.rgb, mask);
+    poiFragData.alpha = lerp(poiFragData.alpha, col.a, mask);
+    poiMesh.normals[1] = lerp(poiMesh.normals[1], normalWS, mask);
+}
+#endif
+//endex
+
+#T#PoiTriplanarProjectionFunctionCalls
+//ifex _TriplanarProjection==0
+#ifdef TRIPLANAR_PROJECTION
+    applyTriplanarProjection(poiFragData, poiMesh, poiCam);
+#endif
+//endex
+
+#T#PoiTriplanarProjectionKillShadow
+//ifex _TriplanarProjection==0
+#ifdef TRIPLANAR_PROJECTION
+    if (_TriplanarType != 2)
+    {
+        clip(-1);
+        return 0;
+    }
+#endif
+//endex

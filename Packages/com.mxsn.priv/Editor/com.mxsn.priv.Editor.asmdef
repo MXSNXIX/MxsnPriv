@@ -1,0 +1,14 @@
+{
+  "name": "com.mxsn.priv.Editor",
+  "references": [
+    "com.mxsn.priv"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "optionalUnityReferences": []
+}

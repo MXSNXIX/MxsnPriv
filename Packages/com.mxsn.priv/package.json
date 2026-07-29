@@ -1,0 +1,17 @@
+{
+  "name": "com.mxsn.priv",
+  "displayName": "com.mxsn.priv",
+  "version": "0.0.1",
+  "description": "Describe this Package",
+  "dependencies": {},
+  "gitDependencies": {},
+  "vpmDependencies": {},
+  "author": {
+    "name": "mxsn",
+    "email": "mxsn@example.com",
+    "url": ""
+  },
+  "legacyFolders": {},
+  "legacyFiles": {},
+  "localPath": "C:\\Users\\ffogz\\OneDrive\\Desktop\\VRCHAT\\MxsnPackageTemplate\\template-package-main\\Packages\\com.mxsn.priv"
+}

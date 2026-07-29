@@ -1,0 +1,227 @@
+#T#PoiGlobalThemesProperties
+[HideInInspector] m_start_GlobalThemes ("Global Themes--{button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/modifiers/global-themes},hover:Documentation}}", Float) = 0
+
+// Global Theme 0
+[HideInInspector] m_start_GlobalThemeColor0 ("Theme Color 0", Float) = 0
+	[HDR]_GlobalThemeColor0 ("Theme Color 0", Color) = (1, 1, 1, 1)
+
+	[ThryWideEnum(OKLab, 0, HSV, 1)] _GlobalThemeHueShiftColorSpace0 ("Color Space", Int) = 0
+	_GlobalThemeHueSpeed0 ("Shift Speed", Float) = 0
+	_GlobalThemeHue0 ("Hue Shift", Range(0, 1)) = 0
+
+	[ThryWideEnum(Saturation Value (old), 0, Saturation Brightness, 1)] _GlobalThemeSaturationMethod0 ("Saturation Style", Int) = 1
+	// Old
+	_GlobalThemeSaturation0 ("Saturation Adjust--{condition_show:(_GlobalThemeSaturationMethod0==0)}", Range(-1, 1)) = 0
+	_GlobalThemeValue0 ("Value Adjust--{condition_show:(_GlobalThemeSaturationMethod0==0)}", Range(-1, 1)) = 0
+	// New
+	_GlobalThemeSaturation0 ("Saturation--{condition_show:(_GlobalThemeSaturationMethod0==1)}", Range(-1, 10)) = 0
+	_GlobalThemeBrightness0 ("Brightness--{condition_show:(_GlobalThemeSaturationMethod0==1)}", Range(-1, 2)) = 0
+[HideInInspector] m_end_GlobalThemeColor0   ("Theme Color 0", Float) = 0
+
+// Global Theme 1
+[HideInInspector] m_start_GlobalThemeColor1 ("Theme Color 1", Float) = 0
+	[HDR]_GlobalThemeColor1 ("Theme Color 1", Color) = (1, 1, 1, 1)
+
+	[ThryWideEnum(OKLab, 0, HSV, 1)] _GlobalThemeHueShiftColorSpace1 ("Color Space", Int) = 0
+	_GlobalThemeHueSpeed1 ("Shift Speed", Float) = 0
+	_GlobalThemeHue1 ("Hue Shift", Range(0, 1)) = 0
+
+	[ThryWideEnum(Saturation Value (old), 0, Saturation Brightness, 1)] _GlobalThemeSaturationMethod1 ("Saturation Style", Int) = 1
+	// Old
+	_GlobalThemeSaturation1 ("Saturation Adjust--{condition_show:(_GlobalThemeSaturationMethod1==0)}", Range(-1, 1)) = 0
+	_GlobalThemeValue1 ("Value Adjust--{condition_show:(_GlobalThemeSaturationMethod1==0)}", Range(-1, 1)) = 0
+	// New
+	_GlobalThemeSaturation1 ("Saturation--{condition_show:(_GlobalThemeSaturationMethod1==1)}", Range(-1, 10)) = 0
+	_GlobalThemeBrightness1 ("Brightness--{condition_show:(_GlobalThemeSaturationMethod1==1)}", Range(-1, 2)) = 0
+[HideInInspector] m_end_GlobalThemeColor1   ("Theme Color 1", Float) = 0
+
+// Global Theme 2
+[HideInInspector] m_start_GlobalThemeColor2 ("Theme Color 2", Float) = 0
+	[HDR]_GlobalThemeColor2 ("Theme Color 2", Color) = (1, 1, 1, 1)
+
+	[ThryWideEnum(OKLab, 0, HSV, 1)] _GlobalThemeHueShiftColorSpace2 ("Color Space", Int) = 0
+	_GlobalThemeHueSpeed2 ("Shift Speed", Float) = 0
+	_GlobalThemeHue2 ("Hue Shift", Range(0, 1)) = 0
+
+	[ThryWideEnum(Saturation Value (old), 0, Saturation Brightness, 1)] _GlobalThemeSaturationMethod2 ("Saturation Style", Int) = 1
+	// Old
+	_GlobalThemeSaturation2 ("Saturation Adjust--{condition_show:(_GlobalThemeSaturationMethod2==0)}", Range(-1, 1)) = 0
+	_GlobalThemeValue2 ("Value Adjust--{condition_show:(_GlobalThemeSaturationMethod2==0)}", Range(-1, 1)) = 0
+	// New
+	_GlobalThemeSaturation2 ("Saturation--{condition_show:(_GlobalThemeSaturationMethod2==1)}", Range(-1, 10)) = 0
+	_GlobalThemeBrightness2 ("Brightness--{condition_show:(_GlobalThemeSaturationMethod2==1)}", Range(-1, 2)) = 0
+[HideInInspector] m_end_GlobalThemeColor2   ("Theme Color 2", Float) = 0
+
+// Global Theme 3
+[HideInInspector] m_start_GlobalThemeColor3 ("Theme Color 3", Float) = 0
+	[HDR]_GlobalThemeColor3 ("Theme Color 3", Color) = (1, 1, 1, 1)
+
+	[ThryWideEnum(OKLab, 0, HSV, 1)] _GlobalThemeHueShiftColorSpace3 ("Color Space", Int) = 0
+	_GlobalThemeHueSpeed3 ("Shift Speed", Float) = 0
+	_GlobalThemeHue3 ("Hue Shift", Range(0, 1)) = 0
+
+	[ThryWideEnum(Saturation Value (old), 0, Saturation Brightness, 1)] _GlobalThemeSaturationMethod3 ("Saturation Style", Int) = 1
+	// Old
+	_GlobalThemeSaturation3 ("Saturation Adjust--{condition_show:(_GlobalThemeSaturationMethod3==0)}", Range(-1, 1)) = 0
+	_GlobalThemeValue3 ("Value Adjust--{condition_show:(_GlobalThemeSaturationMethod3==0)}", Range(-1, 1)) = 0
+	// New
+	_GlobalThemeSaturation3 ("Saturation--{condition_show:(_GlobalThemeSaturationMethod3==1)}", Range(-1, 10)) = 0
+	_GlobalThemeBrightness3 ("Brightness--{condition_show:(_GlobalThemeSaturationMethod3==1)}", Range(-1, 2)) = 0
+[HideInInspector] m_end_GlobalThemeColor3   ("Theme Color 3", Float) = 0
+
+[HideInInspector] m_end_GlobalThemes ("Global Themes", Float ) = 0
+
+#T#PoiGlobalThemesVariablesExposed
+float4 _GlobalThemeColor0;
+float4 _GlobalThemeColor1;
+float4 _GlobalThemeColor2;
+float4 _GlobalThemeColor3;
+float _GlobalThemeHueShiftColorSpace0;
+float _GlobalThemeHueShiftColorSpace1;
+float _GlobalThemeHueShiftColorSpace2;
+float _GlobalThemeHueShiftColorSpace3;
+float _GlobalThemeHue0;
+float _GlobalThemeHue1;
+float _GlobalThemeHue2;
+float _GlobalThemeHue3;
+float _GlobalThemeHueSpeed0;
+float _GlobalThemeHueSpeed1;
+float _GlobalThemeHueSpeed2;
+float _GlobalThemeHueSpeed3;
+float _GlobalThemeSaturationMethod0;
+float _GlobalThemeSaturationMethod1;
+float _GlobalThemeSaturationMethod2;
+float _GlobalThemeSaturationMethod3;
+float _GlobalThemeSaturation0;
+float _GlobalThemeSaturation1;
+float _GlobalThemeSaturation2;
+float _GlobalThemeSaturation3;
+float _GlobalThemeValue0;
+float _GlobalThemeValue1;
+float _GlobalThemeValue2;
+float _GlobalThemeValue3;
+float _GlobalThemeBrightness0;
+float _GlobalThemeBrightness1;
+float _GlobalThemeBrightness2;
+float _GlobalThemeBrightness3;
+
+#T#PoiGlobalThemesFunctions
+void calculateGlobalThemes(inout PoiMods poiMods)
+{
+	// Theme colors are defined as HDR; convert to SDR and do the HSV adjustment, then re-apply exposure
+	float4 themeColorExposures = 0;
+	float4 themeColor0, themeColor1, themeColor2, themeColor3 = 0;
+
+	DecomposeHDRColor(_GlobalThemeColor0.rgb, themeColor0.rgb, themeColorExposures.x);
+	DecomposeHDRColor(_GlobalThemeColor1.rgb, themeColor1.rgb, themeColorExposures.y);
+	DecomposeHDRColor(_GlobalThemeColor2.rgb, themeColor2.rgb, themeColorExposures.z);
+	DecomposeHDRColor(_GlobalThemeColor3.rgb, themeColor3.rgb, themeColorExposures.w);
+
+	// Global Theme 0
+	themeColor0.rgb = hueShift(themeColor0.rgb, frac(_GlobalThemeHue0 + _GlobalThemeHueSpeed0 * POI_TIME.x), _GlobalThemeHueShiftColorSpace0, 1.0);
+	[flatten]
+	switch((int)_GlobalThemeSaturationMethod0)
+	{
+		// Saturation/Value (old)
+		case 0:
+		{
+			themeColor0.rgb = ModifyViaHSV(themeColor0.rgb, 0.0, _GlobalThemeSaturation0, _GlobalThemeValue0);
+			break;
+		}
+		// Saturation/Brightness (new)
+		case 1:
+		{
+			themeColor0.rgb = lerp(themeColor0.rgb, dot(themeColor0.rgb, float3(0.3, 0.59, 0.11)), - (_GlobalThemeSaturation0));
+			themeColor0.rgb = saturate(themeColor0.rgb * (_GlobalThemeBrightness0 + 1));
+			break;
+		}
+		default:
+		{
+			themeColor0.rgb = float3(1.0, 0.0, 0.0);
+			break;
+		}
+	}
+	poiMods.globalColorTheme[0] = float4(ApplyHDRExposure(themeColor0.rgb, themeColorExposures.x), _GlobalThemeColor0.a);
+
+	// Global Theme 1
+	themeColor1.rgb = hueShift(themeColor1.rgb, frac(_GlobalThemeHue1 + _GlobalThemeHueSpeed1 * POI_TIME.x), _GlobalThemeHueShiftColorSpace1, 1.0);
+	[flatten]
+	switch((int)_GlobalThemeSaturationMethod1)
+	{
+		// Saturation/Value (old)
+		case 0:
+		{
+			themeColor1.rgb = ModifyViaHSV(themeColor1.rgb, 0.0, _GlobalThemeSaturation1, _GlobalThemeValue1);
+			break;
+		}
+		// Saturation/Brightness (new)
+		case 1:
+		{
+			themeColor1.rgb = lerp(themeColor1.rgb, dot(themeColor1.rgb, float3(0.3, 0.59, 0.11)), - (_GlobalThemeSaturation1));
+			themeColor1.rgb = saturate(themeColor1.rgb * (_GlobalThemeBrightness1 + 1));
+			break;
+		}
+		default:
+		{
+			themeColor1.rgb = float3(1.0, 0.0, 0.0);
+			break;
+		}
+	}
+	poiMods.globalColorTheme[1] = float4(ApplyHDRExposure(themeColor1.rgb, themeColorExposures.y), _GlobalThemeColor1.a);
+
+	// Global Theme 2
+	themeColor2.rgb = hueShift(themeColor2.rgb, frac(_GlobalThemeHue2 + _GlobalThemeHueSpeed2 * POI_TIME.x), _GlobalThemeHueShiftColorSpace2, 1.0);
+	[flatten]
+	switch((int)_GlobalThemeSaturationMethod2)
+	{
+		// Saturation/Value (old)
+		case 0:
+		{
+			themeColor2.rgb = ModifyViaHSV(themeColor2.rgb, 0.0, _GlobalThemeSaturation2, _GlobalThemeValue2);
+			break;
+		}
+		// Saturation/Brightness (new)
+		case 1:
+		{
+			themeColor2.rgb = lerp(themeColor2.rgb, dot(themeColor2.rgb, float3(0.3, 0.59, 0.11)), - (_GlobalThemeSaturation2));
+			themeColor2.rgb = saturate(themeColor2.rgb * (_GlobalThemeBrightness2 + 1));
+			break;
+		}
+		default:
+		{
+			themeColor2.rgb = float3(1.0, 0.0, 0.0);
+			break;
+		}
+	}
+	poiMods.globalColorTheme[2] = float4(ApplyHDRExposure(themeColor2.rgb, themeColorExposures.z), _GlobalThemeColor2.a);
+
+	// Global Theme 3
+	themeColor3.rgb = hueShift(themeColor3.rgb, frac(_GlobalThemeHue3 + _GlobalThemeHueSpeed3 * POI_TIME.x), _GlobalThemeHueShiftColorSpace3, 1.0);
+	[flatten]
+	switch((int)_GlobalThemeSaturationMethod3)
+	{
+		// Saturation/Value (old)
+		case 0:
+		{
+			themeColor3.rgb = ModifyViaHSV(themeColor3.rgb, 0.0, _GlobalThemeSaturation3, _GlobalThemeValue3);
+			break;
+		}
+		// Saturation/Brightness (new)
+		case 1:
+		{
+			themeColor3.rgb = lerp(themeColor3.rgb, dot(themeColor3.rgb, float3(0.3, 0.59, 0.11)), - (_GlobalThemeSaturation3));
+			themeColor3.rgb = saturate(themeColor3.rgb * (_GlobalThemeBrightness3 + 1));
+			break;
+		}
+		default:
+		{
+			themeColor3.rgb = float3(1.0, 0.0, 0.0);
+			break;
+		}
+	}
+	poiMods.globalColorTheme[3] = float4(ApplyHDRExposure(themeColor3.rgb, themeColorExposures.w), _GlobalThemeColor3.a);
+}
+
+#T#PoiGlobalThemesFunctionCalls
+calculateGlobalThemes(poiMods);
+

@@ -1,0 +1,300 @@
+#T#PoiContactShadowsProperties
+//ifex _ContactShadowsEnabled==0
+
+[HideInInspector] m_start_poiContactShadows (" Contact Shadows--{reference_property:_ContactShadowsEnabled,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/shading/contact-shadows},hover:Documentation}}", Float) = 0
+[HideInInspector][ThryToggle(POI_CONTACT_SHADOWS)]_ContactShadowsEnabled ("Contact Shadows Enabled", Float) = 0
+[Helpbox(1, 2)]_ContactShadowsDepthWarning ("Contact Shadows Requires depth. Put the DepthGet.prefab on your avatar so it'll work in every world.", Int) = 0
+[PoiPrefabSpawner(23c61f8f4d0a87243a36c937bd3e1393)] _ContactShadowsSpawnDepthGet ("Add DepthGet Prefab to Scene", Float) = 0
+[ToggleUI]_ContactShadowsAnimationToggle ("Animatable Toggle--{hover:A toggle you can animate to enable and disable Contact Shadows entirely}", Float) = 1
+_ContactShadowsIntensity ("Shadow Intensity", Range(0, 1)) = 0.5
+_ContactShadowsMaxDistance ("Max Distance--{hover:How far to trace for shadows. Typical range 0.01-0.1}", Range(0.001, 0.2)) = 0.03
+_ContactShadowsQuality ("Quality--{hover:Number of ray march steps (4-32). Higher = better quality but more expensive}", Range(1, 10)) = 4
+_ContactShadowsThickness ("Thickness--{hover:Minimum depth difference to count as shadow. Increase to reduce self-shadowing}", Range(0.0001, 0.05)) = 0.005
+_ContactShadowsBias ("Depth Bias--{hover:Offset to prevent self-shadowing artifacts}", Range(0, 0.05)) = 0.001
+
+[HideInInspector] s_start_ContactShadowsLightSource ("Light Source--{persistent_expand:true, default_expand:true}", Float) = 1
+[ThryWideEnum(Main Light, 0, Custom Direction, 1)] _ContactShadowsLightSource ("Light Source", Float) = 0
+_ContactShadowsCustomLightDir ("Custom Light Direction--{condition_show:(_ContactShadowsLightSource==1)}", Vector) = (0, 1, 0, 0)
+[HideInInspector] s_end_ContactShadowsLightSource ("", Float) = 0
+
+[HideInInspector] s_start_ContactShadowsFalloff ("Falloff--{persistent_expand:true, default_expand:true}", Float) = 1
+[Vector2]_ContactShadowsCameraFalloff ("Camera Distance Falloff--{hover:X = start fading, Y = fully faded. Shadows fade out at distance from camera.}", Vector) = (5, 10, 0, 0)
+[HideInInspector] s_end_ContactShadowsFalloff ("", Float) = 0
+
+[HideInInspector] s_start_ContactShadowsApplication ("Application Mode--{persistent_expand:true, default_expand:true}", Float) = 0
+[ThryWideEnum(Color Blend, 0, Lightmap Multiply, 1, Both, 2)] _ContactShadowsApplyMode ("Apply Mode--{hover:Color Blend = overlay shadow color. Lightmap Multiply = integrate with toon shading. Both = apply to both}", Float) = 1
+[HideInInspector] s_end_ContactShadowsApplication ("", Float) = 0
+
+[HideInInspector] s_start_ContactShadowsColorAndMasking ("Color And Masking--{persistent_expand:true, default_expand:false}", Float) = 0
+[Toggle(CONTACT_SHADOWS_MASK_TEX)]_ContactShadowsEnableMaskTexture ("Use Mask?", Float) = 0
+[sRGBWarning]_ContactShadowsMask ("Mask--{reference_properties:[_ContactShadowsMaskPan, _ContactShadowsMaskUV, _ContactShadowsMaskChannel, _ContactShadowsMaskInvert],condition_show:(_ContactShadowsEnableMaskTexture==1)}", 2D) = "white" { }
+[ThryHideInInspector][Vector2]_ContactShadowsMaskPan ("Panning", Vector) = (0, 0, 0, 0)
+[ThryHideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7, Matcap, 9)] _ContactShadowsMaskUV ("UV", Int) = 0
+[ThryHideInInspector][Enum(R, 0, G, 1, B, 2, A, 3)]_ContactShadowsMaskChannel ("Channel", Float) = 0
+[ThryHideInInspector][ToggleUI]_ContactShadowsMaskInvert ("Invert", Float) = 0
+_ContactShadowsColor ("Shadow Color--{reference_property:_ContactShadowsColorThemeIndex}", Color) = (0, 0, 0, 1)
+[ThryHideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _ContactShadowsColorThemeIndex ("", Int) = 0
+[ThryWideEnum(Replace, 0, Darken, 1, Multiply, 2, Lighten, 5, Screen, 6, Subtract, 7, Add, 8, Overlay, 9)]_ContactShadowsBlendType ("Blend Mode", Float) = 2
+[HideInInspector] s_end_ContactShadowsColorAndMasking ("", Float) = 0
+
+[HideInInspector] s_start_ContactShadowsAdvanced ("Global Masks--{persistent_expand:true, default_expand:false}", Float) = 0
+_ContactShadowsNormalBias ("Normal Rejection--{hover:Reduces shadows on surfaces facing away from the light}", Range(0, 1)) = 0.3
+_ContactShadowsHideInLight ("Hide In Light--{hover:Reduce contact shadows in areas already receiving direct light}", Range(0, 1)) = 0
+_ContactShadowsNoiseScale ("Dither Noise--{hover:Per-pixel noise to reduce banding. Higher = less banding but more grain}", Range(0, 1)) = 1.0
+_ContactShadowsRejectionDepth ("Rejection Depth--{hover:Maximum depth difference for a shadow hit. Prevents shadows leaking through thick objects}", Range(0.001, 1)) = 0.1
+[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _ContactShadowsGlobalMaskIndex (" Apply From Global Mask--{reference_property:_ContactShadowsGlobalMaskBlendType}", Int) = 0
+[ThryHideInInspector][ThryWideEnum(Add, 7, Subtract, 1, Multiply, 2, Divide, 3, Min, 4, Max, 5, Average, 6, Replace, 0)]_ContactShadowsGlobalMaskBlendType ("Blending", Range(0, 1)) = 2
+[ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _ContactShadowsApplyGlobalMaskIndex (" Apply to Global Mask--{reference_property:_ContactShadowsApplyGlobalMaskBlendType}", Int) = 0
+[ThryHideInInspector][ThryWideEnum(Add, 7, Subtract, 1, Multiply, 2, Divide, 3, Min, 4, Max, 5, Average, 6, Replace, 0)] _ContactShadowsApplyGlobalMaskBlendType ("Blending", Int) = 0
+[HideInInspector] s_end_ContactShadowsAdvanced ("", Float) = 0
+
+[ToggleUI]_ContactShadowsDebug ("Debug--{hover:Shows only the contact shadow value. White = no shadow, Black = full shadow}", Float) = 0
+
+[HideInInspector] m_end_poiContactShadows ("Contact Shadows", Float) = 0
+//endex
+#T#PoiContactShadowsKeywords
+//ifex _ContactShadowsEnabled==0
+#pragma shader_feature POI_CONTACT_SHADOWS
+#pragma shader_feature_local CONTACT_SHADOWS_MASK_TEX
+//endex
+
+#T#PoiContactShadowsVariables
+//ifex _ContactShadowsEnabled==0
+#ifdef POI_CONTACT_SHADOWS
+	float _ContactShadowsAnimationToggle;
+	float _ContactShadowsIntensity;
+	float _ContactShadowsMaxDistance;
+	float _ContactShadowsQuality;
+	float _ContactShadowsThickness;
+	float _ContactShadowsBias;
+	float _ContactShadowsLightSource;
+	float4 _ContactShadowsCustomLightDir;
+	float4 _ContactShadowsCameraFalloff;
+	float _ContactShadowsApplyMode;
+	float _ContactShadowsNormalBias;
+	float _ContactShadowsHideInLight;
+	float4 _ContactShadowsColor;
+	float _ContactShadowsColorThemeIndex;
+	float _ContactShadowsBlendType;
+
+	#if defined(PROP_CONTACTSHADOWSMASK) || !defined(OPTIMIZER_ENABLED)
+		float4 _ContactShadowsMask_ST;
+		float2 _ContactShadowsMaskPan;
+		float _ContactShadowsMaskUV;
+		float _ContactShadowsMaskChannel;
+		float _ContactShadowsMaskInvert;
+	#endif
+
+	float _ContactShadowsNoiseScale;
+	float _ContactShadowsRejectionDepth;
+	float _ContactShadowsGlobalMaskIndex;
+	float _ContactShadowsGlobalMaskBlendType;
+	float _ContactShadowsApplyGlobalMaskIndex;
+	float _ContactShadowsApplyGlobalMaskBlendType;
+	float _ContactShadowsDebug;
+#endif
+//endex
+
+#T#PoiContactShadowsVariablesExposed
+//ifex _ContactShadowsEnabled==0
+#ifdef POI_CONTACT_SHADOWS
+	#if defined(PROP_CONTACTSHADOWSMASK) || !defined(OPTIMIZER_ENABLED)
+		#ifdef CONTACT_SHADOWS_MASK_TEX
+			texture2D _ContactShadowsMask;
+		#endif
+	#endif
+#endif
+//endex
+
+#T#PoiContactShadowsFunctions
+//ifex _ContactShadowsEnabled==0
+#if defined(POI_CONTACT_SHADOWS)
+
+float ContactShadowsInterleavedGradientNoise(float2 pixelCoord)
+{
+	float3 magic = float3(0.06711056, 0.00583715, 52.9829189);
+	return frac(magic.z * frac(dot(pixelCoord, magic.xy)));
+}
+
+float CalculateContactShadow(float2 screenUV, float3 lightDir, PoiMesh poiMesh, PoiCam poiCam)
+{
+	// Camera distance falloff
+	float cameraFalloff = 1.0 - smoothstep(_ContactShadowsCameraFalloff.x, _ContactShadowsCameraFalloff.y, poiCam.distanceToVert);
+	if (cameraFalloff <= 0) return 1.0;
+
+	// Ray march steps based on quality (4 to 32)
+	int steps = int(lerp(4, 32, saturate((_ContactShadowsQuality - 1) / 9.0)));
+	float invSteps = 1.0 / float(steps);
+	float maxDist = _ContactShadowsMaxDistance;
+
+	// View-space raymarching for numerical stability
+	float3 viewPos = mul(UNITY_MATRIX_V, float4(poiMesh.worldPos, 1.0)).xyz;
+	float3 viewLightDir = mul((float3x3)UNITY_MATRIX_V, lightDir);
+
+	// Precompute clip-space center and ray delta (2 P multiplies instead of N VP multiplies)
+	float4 clipCenter = mul(UNITY_MATRIX_P, float4(viewPos, 1.0));
+	float4 clipDelta = mul(UNITY_MATRIX_P, float4(viewLightDir * maxDist, 0.0));
+
+	float clipCenterW = max(clipCenter.w, 0.001);
+	float2 uvCenter = clipCenter.xy / clipCenterW * 0.5 + 0.5;
+	#if UNITY_UV_STARTS_AT_TOP
+	if (_ProjectionParams.x < 0)
+		uvCenter.y = 1.0 - uvCenter.y;
+	#endif
+	float2 uvCorrection = screenUV - uvCenter;
+	float4 frustumCorrection = CalculateFrustumCorrection();
+
+	// Per-pixel dither noise to break banding
+	float2 noiseCoord = screenUV * _ScreenParams.xy + unity_StereoEyeIndex * 1.618033988;
+	float noise = ContactShadowsInterleavedGradientNoise(noiseCoord);
+	float noiseOffset = (noise * 2.0 - 1.0) * _ContactShadowsNoiseScale;
+
+	// Noise-jittered thickness threshold softens shadow edges
+	float thicknessThreshold = _ContactShadowsThickness * (1.0 + noise * 0.5 * _ContactShadowsNoiseScale);
+
+	// March along ray toward light
+	[loop]
+	for (int i = 0; i < steps; i++)
+	{
+		float t = (i + 0.5 + noiseOffset) * invSteps;
+		if (t < 0 || t > 1) continue;
+
+		// Interpolate in clip space (linear since P * (viewPos + dir * t) = clipCenter + clipDelta * t)
+		float4 clipSample = clipCenter + clipDelta * t;
+		float clipW = max(clipSample.w, 0.0001);
+		float2 sampleUV = clipSample.xy / clipW * 0.5 + 0.5;
+
+		#if UNITY_UV_STARTS_AT_TOP
+		if (_ProjectionParams.x < 0)
+			sampleUV.y = 1.0 - sampleUV.y;
+		#endif
+
+		sampleUV += uvCorrection;
+
+		// Skip if outside screen
+		if (any(sampleUV < 0) || any(sampleUV > 1))
+			continue;
+
+		// Sample depth
+		float sampleDepthValue = SampleScreenDepth(sampleUV);
+
+		// Skip skybox
+		#if UNITY_REVERSED_Z
+			if (sampleDepthValue < 0.0001) continue;
+		#else
+			if (sampleDepthValue > 0.9999) continue;
+		#endif
+
+		// Compare depths
+		float sampleCorrectionFactor = dot(clipSample, frustumCorrection) / clipW;
+		float expectedDepth = CorrectedLinearEyeDepth(clipSample.z / clipW, sampleCorrectionFactor);
+		float actualDepth = CorrectedLinearEyeDepth(sampleDepthValue, sampleCorrectionFactor);
+		float depthDiff = expectedDepth - actualDepth - _ContactShadowsBias;
+
+		// Hit: depth diff exceeds thickness but stays within rejection depth
+		if (depthDiff > thicknessThreshold && depthDiff < _ContactShadowsRejectionDepth)
+		{
+			float distanceFade = 1.0 - smoothstep(0.7, 1.0, t);
+			return 1.0 - (cameraFalloff * distanceFade);
+		}
+	}
+
+	// No occlusion found
+	return 1.0;
+}
+
+float calculateContactShadows(PoiMesh poiMesh, PoiCam poiCam, inout PoiLight poiLight, inout PoiMods poiMods)
+{
+	if (!DepthTextureExists() || _ContactShadowsAnimationToggle == 0)
+		return 1.0;
+
+	float perspectiveDivide = 1.0 / poiCam.clipPos.w;
+	float2 screenPos = poiCam.posScreenSpace * perspectiveDivide;
+
+	// Get mask value
+	float mask = 1.0;
+	#ifdef CONTACT_SHADOWS_MASK_TEX
+		#if defined(PROP_CONTACTSHADOWSMASK) || !defined(OPTIMIZER_ENABLED)
+			mask = POI2D_SAMPLER_PAN(_ContactShadowsMask, _MainTex, poiUV(poiMesh.uv[_ContactShadowsMaskUV], _ContactShadowsMask_ST), _ContactShadowsMaskPan)[_ContactShadowsMaskChannel];
+			mask = _ContactShadowsMaskInvert > 0 ? 1.0 - mask : mask;
+		#endif
+	#endif
+
+	if (_ContactShadowsGlobalMaskIndex > 0)
+		mask = maskBlend(mask, poiMods.globalMask[_ContactShadowsGlobalMaskIndex - 1], _ContactShadowsGlobalMaskBlendType);
+
+	if (mask < 0.001)
+		return 1.0;
+
+	// Get light direction
+	float3 lightDir;
+	if (_ContactShadowsLightSource == 0)
+		lightDir = poiLight.direction;
+	else
+		lightDir = normalize(_ContactShadowsCustomLightDir.xyz);
+
+	// Calculate contact shadow
+	float contactShadow = CalculateContactShadow(screenPos, lightDir, poiMesh, poiCam);
+
+	// Apply normal rejection
+	float NdotL = saturate(dot(poiMesh.normals[1], lightDir));
+	contactShadow = lerp(contactShadow, 1.0, (1.0 - NdotL) * _ContactShadowsNormalBias);
+
+	// Apply mask
+	contactShadow = lerp(1.0, contactShadow, mask);
+
+	// Apply to global mask if configured
+	if (_ContactShadowsApplyGlobalMaskIndex > 0)
+		applyToGlobalMask(poiMods, _ContactShadowsApplyGlobalMaskIndex - 1, _ContactShadowsApplyGlobalMaskBlendType, contactShadow);
+
+	return contactShadow;
+}
+
+void applyContactShadowsColor(float contactShadow, in PoiMesh poiMesh, inout PoiFragData poiFragData, inout PoiMods poiMods, inout PoiLight poiLight)
+{
+	// Early-out if no shadow effect or lightmap-only mode
+	if (contactShadow >= 1.0) return;
+	if (_ContactShadowsApplyMode == 1) return;
+
+	// Hide in lit areas
+	contactShadow = lerp(contactShadow, 1.0, saturate(poiLight.rampedLightMap / max(1.0 - _ContactShadowsIntensity, 0.01)) * _ContactShadowsHideInLight);
+
+	// Calculate shadow intensity for color blend
+	float shadowAmount = (1.0 - contactShadow) * _ContactShadowsIntensity;
+
+	// Apply color blend
+	float3 shadowColor = poiThemeColor(poiMods, _ContactShadowsColor.rgb, _ContactShadowsColorThemeIndex).rgb;
+	poiFragData.baseColor = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, shadowColor, _ContactShadowsBlendType), shadowAmount);
+}
+
+#endif
+//endex
+
+#T#PoiContactShadowsCalculate
+//ifex _ContactShadowsEnabled==0
+#if defined(POI_CONTACT_SHADOWS)
+	float contactShadow = calculateContactShadows(poiMesh, poiCam, poiLight, poiMods);
+
+	// Apply to lightmap early so it affects toon shading
+	if (_ContactShadowsApplyMode == 1 || _ContactShadowsApplyMode == 2)
+	{
+		float csHideInLight = lerp(contactShadow, 1.0, poiLight.rampedLightMap * _ContactShadowsHideInLight);
+		float lightmapShadow = lerp(1.0, csHideInLight, _ContactShadowsIntensity);
+
+		poiLight.rampedLightMap *= lightmapShadow;
+		poiLight.lightMap *= lightmapShadow;
+		poiLight.nDotLSaturated *= lightmapShadow;
+		poiLight.detailShadow *= lightmapShadow;
+	}
+#endif
+//endex
+#T#PoiContactShadowsApply
+//ifex _ContactShadowsEnabled==0
+#if defined(POI_CONTACT_SHADOWS)
+	if (_ContactShadowsDebug > 0)
+	{
+		return float4(contactShadow.xxx, 1);
+	}
+	applyContactShadowsColor(contactShadow, poiMesh, poiFragData, poiMods, poiLight);
+#endif
+//endex
