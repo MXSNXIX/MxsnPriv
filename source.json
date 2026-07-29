@@ -1,18 +1,12 @@
 {
-  "name": "Mxsn Private Listing",
+  "name": "Mxsn Shader Repo",
   "id": "com.mxsn.priv.listing",
-  "url": "https://MXSNXIX.github.io/MxsnPriv/index.json",
   "author": {
     "email": "mxsn@example.com",
     "name": "Mxsn",
     "url": "https://github.com/MXSNXIX"
   },
   "description": "Listing of Mxsn's VRChat packages",
-  "infoLink": {
-    "url": "https://github.com/MXSNXIX/MxsnPriv",
-    "text": "View on GitHub"
-  },
-  "bannerUrl": "banner.png",
   "githubRepos": [
     "MXSNXIX/MxsnPriv"
   ],
