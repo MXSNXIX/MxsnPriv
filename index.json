@@ -1,0 +1,25 @@
+{
+  "name": "Mxsn Shader Repo",
+  "id": "com.mxsn.priv.repo",
+  "url": "https://MXSNXIX.github.io/MxsnPriv/index.json",
+  "author": "mxsn@example.com",
+  "packages": {
+    "com.mxsn.priv": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.mxsn.priv",
+          "displayName": "Mxsn Poi Pro Shader",
+          "version": "1.0.0",
+          "author": {
+            "name": "Mxsn",
+            "email": "mxsn@example.com"
+          },
+          "description": "Private Poiyomi-style shader package.",
+          "unity": "2022.3",
+          "vpmDependencies": {},
+          "url": "https://raw.githubusercontent.com/MXSNXIX/MxsnPriv/main/Packages/com.mxsn.priv/package.json"
+        }
+      }
+    }
+  }
+}
