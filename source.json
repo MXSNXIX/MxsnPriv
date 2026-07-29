@@ -1,29 +1,29 @@
 {
-    "name":"Example Listing",
-    "id":"com.vrchat.example-listing",
-    "url":"https://vrchat-community.github.io/template-package-listing/index.json",
-    "author":{
-        "email":"developer@vrchat.com",
-        "name":"VRChat",
-        "url":"https://hello.vrchat.com"
-    },
-    "description":"Example listing of VRChat packages",
-    "infoLink":{
-        "url":"http://github.com/vrchat-community/template-package-listing",
-        "text":"View on GitHub"
-    },
-    "bannerUrl":"banner.png",
-    "githubRepos":[
-        "vrchat-community/clientsim"
-        "MXSNXIX/MxsnPriv"
-    ],
-    "packages":[
-        {
-            "name":"com.vrchat.udonsharp",
-            "releases":[
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.7/com.vrchat.UdonSharp.zip",
-                "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.6/com.vrchat.UdonSharp-1.1.6.zip"
-            ]
-        }
-    ]
+  "name": "Mxsn Private Listing",
+  "id": "com.mxsn.priv.listing",
+  "url": "https://MXSNXIX.github.io/MxsnPriv/index.json",
+  "author": {
+    "email": "mxsn@example.com",
+    "name": "Mxsn",
+    "url": "https://github.com/MXSNXIX"
+  },
+  "description": "Private listing of Mxsn's VRChat packages",
+  "infoLink": {
+    "url": "https://github.com/MXSNXIX/MxsnPriv",
+    "text": "View on GitHub"
+  },
+  "bannerUrl": "banner.png",
+  "githubRepos": [
+    "vrchat-community/clientsim",
+    "MXSNXIX/MxsnPriv"
+  ],
+  "packages": [
+    {
+      "name": "com.vrchat.udonsharp",
+      "releases": [
+        "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.7/com.vrchat.UdonSharp.zip",
+        "https://github.com/vrchat-community/UdonSharp/releases/download/1.1.6/com.vrchat.UdonSharp-1.1.6.zip"
+      ]
+    }
+  ]
 }
